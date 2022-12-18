@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Fri Dec 16 23:11:48 2022
-
+Main Visulization and sorting code
 @author: Freddie
 """
 import sys
