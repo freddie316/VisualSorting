@@ -12,7 +12,6 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
 class TrackedArray():
-
     def __init__(self, arr, kind="full"):
         self.arr = np.copy(arr)
         self.kind = kind
