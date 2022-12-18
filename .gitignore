@@ -152,5 +152,5 @@ cython_debug/
 #.idea/
 
 # Created visualization and audio files
-.mp4
-.wav
+*.mp4
+*.wav
