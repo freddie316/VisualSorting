@@ -367,7 +367,7 @@ def update(frame):
     
     return (txt, *container)
 
-print("Rendering frames, please do not close the plot")
+print("Rendering frames, please do not close the figure window!")
 
 ani = FuncAnimation(fig, update, frames=range(len(arr.full_copies)), 
                     blit=False, interval=1000./FPS, repeat=False)
