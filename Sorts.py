@@ -118,6 +118,15 @@ def cocktail_sort(arr):
         n += 1
     return arr
 
+def selection_sort(arr):
+    for i in range(0,len(arr)):
+        min_idx = i
+        for j in range(i+1,len(arr)):
+            if arr[min_idx] > arr[j]:
+                min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+    return arr
+
 def insertion_sort(arr):
     for i in range(1,len(arr)):
         if arr[i] < arr[i-1]:
@@ -126,6 +135,24 @@ def insertion_sort(arr):
                 arr[ind], arr[ind - 1] = arr[ind - 1], arr[ind]
                 ind -= 1
     return arr
+
+def shell_sort(arr, mode="Shell"):
+    N = len(arr)
+    gaps = []
+    if mode == "Shell":
+        k = 1
+        while N // pow(2,k) >= 1:
+            gap = N // pow(2,k)
+            gaps.append(gap)
+            k += 1
+    for gap in gaps:
+        for i in range(gap,len(arr)):
+            temp = arr[i]
+            ind = i
+            while ind >= gap and arr[ind-gap] > temp:
+                arr[ind] = arr[ind - gap]
+                ind -= gap
+            arr[ind] = temp
 
 def quick_sort(A, lo=0, hi=0):
     if lo == hi == 0:
@@ -248,24 +275,6 @@ def radix_sort(arr):
         countingSort(arr,expo)
         expo *= 10
     
-def shell_sort(arr, mode="Shell"):
-    N = len(arr)
-    gaps = []
-    if mode == "Shell":
-        k = 1
-        while N // pow(2,k) >= 1:
-            gap = N // pow(2,k)
-            gaps.append(gap)
-            k += 1
-    for gap in gaps:
-        for i in range(gap,len(arr)):
-            temp = arr[i]
-            ind = i
-            while ind >= gap and arr[ind-gap] > temp:
-                arr[ind] = arr[ind - gap]
-                ind -= gap
-            arr[ind] = temp
-                
 # =============================================================================
 # methods = [
 #     "bubble",
@@ -327,6 +336,10 @@ elif sorter == "radix":
 elif sorter == "shell":
     t0 = time.perf_counter()
     shell_sort(arr)
+    t = time.perf_counter() - t0
+elif sorter == "selection":
+    t0 = time.perf_counter()
+    selection_sort(arr)
     t = time.perf_counter() - t0
 else:
     print("Error: Unknown method, defaulting to merge")

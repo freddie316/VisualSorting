@@ -1,5 +1,5 @@
 @echo off
-set methods=bubble cocktail insertion quick merge radix shell
+set methods=bubble cocktail selection insertion shell quick merge radix  
 
 echo Available methods:
 (for %%i in (%methods%) do (

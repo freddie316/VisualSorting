@@ -13,11 +13,13 @@
  ### Available Methods:
  - Bubble
  - Cocktail
+ - Selection
  - Insertion
+ - Shell
  - Quick
  - Merge
  - Radix
- - Shell
+
 
 ### Credits:  
 Dave's Space - Awesome tutorial videos on creating this visualization method, https://github.com/davesspace/tutorial-visual-sorting
