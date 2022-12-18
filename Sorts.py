@@ -370,5 +370,5 @@ def update(frame):
 print("Rendering frames, please do not close the figure window!")
 
 ani = FuncAnimation(fig, update, frames=range(len(arr.full_copies)), 
-                    blit=False, interval=1000./FPS, repeat=False)
+                    blit=False, interval=1000./FPS, repeat=False, cache_frame_data=False)
 plt.show()
