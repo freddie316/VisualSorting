@@ -118,12 +118,9 @@ def cocktail_sort(arr):
         n += 1
     return arr
 
-def insertion_sort(arrIn):
-    arr = arrIn
+def insertion_sort(arr):
     for i in range(1,len(arr)):
-        if arr[i] > arr[i-1]:
-            continue
-        else:
+        if arr[i] < arr[i-1]:
             ind = i
             while ind > 0 and arr[ind] < arr[ind-1]:
                 arr[ind], arr[ind - 1] = arr[ind - 1], arr[ind]
@@ -251,8 +248,24 @@ def radix_sort(arr):
         countingSort(arr,expo)
         expo *= 10
     
-    
-
+def shell_sort(arr, mode="Shell"):
+    N = len(arr)
+    gaps = []
+    if mode == "Shell":
+        k = 1
+        while N // pow(2,k) >= 1:
+            gap = N // pow(2,k)
+            gaps.append(gap)
+            k += 1
+    for gap in gaps:
+        for i in range(gap,len(arr)):
+            temp = arr[i]
+            ind = i
+            while ind >= gap and arr[ind-gap] > temp:
+                arr[ind] = arr[ind - gap]
+                ind -= gap
+            arr[ind] = temp
+                
 # =============================================================================
 # methods = [
 #     "bubble",
@@ -271,7 +284,7 @@ def radix_sort(arr):
 try:
     sorter = sys.argv[1]
 except:
-    sorter = "quick"
+    sorter = "shell"
 
 # Params ########
 try:
@@ -310,6 +323,10 @@ elif sorter == "insertion":
 elif sorter == "radix":
     t0 = time.perf_counter()
     radix_sort(arr)
+    t = time.perf_counter() - t0
+elif sorter == "shell":
+    t0 = time.perf_counter()
+    shell_sort(arr)
     t = time.perf_counter() - t0
 else:
     print("Error: Unknown method, defaulting to merge")

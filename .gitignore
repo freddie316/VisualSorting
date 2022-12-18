@@ -154,3 +154,4 @@ cython_debug/
 # Created visualization and audio files
 *.mp4
 *.wav
+*.png
