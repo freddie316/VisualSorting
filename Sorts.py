@@ -346,8 +346,6 @@ for i, value in enumerate(arr.values):
 sp.io.wavfile.write(f"sound/{sorter}_sound.wav", F_SAMPLE, wav_data)
 
 def update(frame):
-    if frame == len(arr.full_copies):
-        plt.close()
     txt.set_text(f"Array Accesses: {frame}")
     for (rectangle, height) in zip(container.patches, arr.full_copies[frame]):
         rectangle.set_height(height)
@@ -364,9 +362,12 @@ def update(frame):
     
     fig.savefig(f"frames/{sorter}_frame{frame:05.0f}.png")
     
+    if frame == len(arr.full_copies)-1:
+        plt.close(fig)
+    
     return (txt, *container)
 
-print("Rendering frames, close the plot when done")
+print("Rendering frames, please do not close the plot")
 
 ani = FuncAnimation(fig, update, frames=range(len(arr.full_copies)), 
                     blit=False, interval=1000./FPS, repeat=False)
