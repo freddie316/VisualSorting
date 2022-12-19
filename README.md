@@ -7,6 +7,8 @@
  - scipy
  - matplotlib
  - FFMPEG - https://github.com/BtbN/FFmpeg-Builds/releases
+	- Required to compile the generated frames and soudn into a mp4
+	- Must be in system PATH so that .bat file can call it
  
  ### How To:
  Down the zip of the repository, unzip, and double click the make_movie.bat. Input what sorting method you want to use and the array size, then sit back and watch as the sorting algorithm runs!
