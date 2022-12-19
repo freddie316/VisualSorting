@@ -1,7 +1,7 @@
 # Visual Sorting
  Program for visualizing various sorting algorithms
- 
- https://user-images.githubusercontent.com/5875044/208344069-e296f196-a2ac-43fe-879b-1cb90af8ecae.mp4
+
+https://user-images.githubusercontent.com/5875044/208347920-2ab771b2-5e99-426c-8e32-3c13e1e83b49.mp4
  
  ### Requirements:
  - Python 3.9  
