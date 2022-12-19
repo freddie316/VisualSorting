@@ -9,7 +9,7 @@
  	- scipy
  	- matplotlib
  - FFMPEG - https://github.com/BtbN/FFmpeg-Builds/releases
-	- Required to compile the generated frames and soudn into a mp4
+	- Required to compile the generated frames and sound into a mp4
 	- Must be in system PATH so that .bat file can call it
 	- Installation guide: https://www.youtube.com/watch?v=qjtmgCb8NcE&t=0s
  
