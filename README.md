@@ -5,9 +5,9 @@
  
  ### Requirements:
  - Python 3.9  
- - numpy
- - scipy
- - matplotlib
+ 	- numpy
+ 	- scipy
+ 	- matplotlib
  - FFMPEG - https://github.com/BtbN/FFmpeg-Builds/releases
 	- Required to compile the generated frames and soudn into a mp4
 	- Must be in system PATH so that .bat file can call it
