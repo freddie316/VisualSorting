@@ -23,6 +23,7 @@
  - Merge (N <= 100)
  - Radix (N <= 100)
 
+https://user-images.githubusercontent.com/5875044/208344069-e296f196-a2ac-43fe-879b-1cb90af8ecae.mp4
 
 ### Credits:  
 Dave's Space - Awesome tutorial videos on creating this visualization method, https://github.com/davesspace/tutorial-visual-sorting
