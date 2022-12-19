@@ -8,7 +8,7 @@ https://user-images.githubusercontent.com/5875044/208347920-2ab771b2-5e99-426c-8
  	- numpy
  	- scipy
  	- matplotlib
- - FFMPEG - https://github.com/BtbN/FFmpeg-Builds/releases
+ - FFmpeg - https://github.com/BtbN/FFmpeg-Builds/releases
 	- Required to compile the generated frames and sound into a mp4
 	- Must be in system PATH so that .bat file can call it
 	- Installation guide: https://www.youtube.com/watch?v=qjtmgCb8NcE&t=0s
