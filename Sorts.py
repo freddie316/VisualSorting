@@ -73,12 +73,12 @@ class TrackedArray():
 def freq_map(x, x_min = 0, x_max = 1000, freq_min = 120, freq_max = 1200):
     return np.interp(x, [x_min,x_max], [freq_min,freq_max])
 
-def freq_sample(freq,dt=1./60., samplerate=44100, oversample=2):
+def freq_sample(freq, dt=1./60., samplerate=44100, oversample=2, vol=0.2):
     mid_samples = int(dt * samplerate)
     pad_samples = int((mid_samples*(oversample-1)/2))
     total_samples = mid_samples + 2 *pad_samples
     
-    y = np.sin(2 * np.pi * freq * np.linspace(0,dt,total_samples))
+    y = vol*np.sin(2 * np.pi * freq * np.linspace(0,dt,total_samples))
     
     y[:pad_samples] = y[:pad_samples] * np.linspace(0,1,pad_samples)
     y[-pad_samples:] = y[len(y) - pad_samples:] * \
